@@ -6,12 +6,20 @@ export const jsonFetcher = (url: string) =>
 export const jsonPost = (url: string, body?: Object) =>
   fetch(process.env.NEXT_PUBLIC_API_URL + url, {
     method: "POST",
-    body: JSON.stringify(body),
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: body ? JSON.stringify(body) : undefined,
   }).then((res) => res.json());
 
 export const jsonDelete = (url: string, body?: Object) =>
   fetch(process.env.NEXT_PUBLIC_API_URL + url, {
     method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(body),
   }).then((res) => res.json());
 
