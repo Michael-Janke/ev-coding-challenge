@@ -84,6 +84,7 @@ export const AddPropertyDrawer: FC<AddPropertyDrawerProps> = ({
               <Select
                 id="type"
                 value={newProperty.type}
+                placeholder="Select property type"
                 onChange={(event) =>
                   setNewProperty((property) => ({
                     ...property,
